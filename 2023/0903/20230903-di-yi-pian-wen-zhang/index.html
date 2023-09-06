@@ -285,6 +285,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -409,6 +422,10 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E4%BC%BC%E6%B0%B4%E6%B5%81%E5%B9%B4/">
+                                <span class="chip bg-color">似水流年</span>
+                            </a>
+                        
                             <a href="/tags/Node/">
                                 <span class="chip bg-color">Node</span>
                             </a>
@@ -431,10 +448,6 @@
                         
                             <a href="/tags/%E6%95%99%E7%A8%8B/">
                                 <span class="chip bg-color">教程</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BC%BC%E6%B0%B4%E6%B5%81%E5%B9%B4/">
-                                <span class="chip bg-color">似水流年</span>
                             </a>
                         
                     </div>
@@ -465,21 +478,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-05
+                    2023-09-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    14 分
                 </div>
                 
 
@@ -502,9 +515,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <!-- tags 参考98，似水流年，情感，社会等等，教程，C++,Python,Java等等 -->
+                <!-- tags 参考98，似水流年，情感，社会等等，教程，C++,Python,Java等等 
+https://zhuanlan.zhihu.com/p/78087948
+front-matter就是.md文件最上面的这部分内容-->
 
-<h1 id="开笔篇"><a href="#开笔篇" class="headerlink" title="开笔篇"></a>开笔篇</h1><p><img src="http://www.news.cn/politics/2023-09/03/1129842759_16937028538601n.jpeg" title="来源 http://www.news.cn/politics/2023-09/03/c_1129842759.htm"></p>
+<h1 id="开笔篇"><a href="#开笔篇" class="headerlink" title="开笔篇"></a>开笔篇</h1><span id="more"></span>
+<p><img src="http://www.news.cn/politics/2023-09/03/1129842759_16937028538601n.jpeg" title="来源 http://www.news.cn/politics/2023-09/03/c_1129842759.htm"></p>
 <p>今天是个特殊的日子，纪念中国人民抗日战争暨世界反法西斯战争胜利78周年！缅怀革命先烈！</p>
 <p>开笔篇，摘抄《周恩来旅日日记》的一段话来自勉吧：</p>
 <p>我平生最烦恧的是平常人立了志向不去行。我嫌他是多事。今天我也立志了，但是我这志是早定了。不过今天想的是这一年内进行的方针问题，既然比那铺张门面的话小，事情究比较着得亲切而易行了。<font color=red><strong>我先把它写出来，做个旧历元旦的开笔篇吧：第一，想要想比现在还新的思想；第二，做要做比现在最新的事情；第三，学要学离现在最近的学问。思想要自由，做事要实在，学问要真切。</strong></font></p>
@@ -785,7 +801,11 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
 .gitlab-ci.yml  package.json  scaffolds<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>而github是真的方便，写完文章，直接本地hexo g -d就行，只是项目里有node_modules（各种包）和.deploy_git、public（上传到github的html文件）文件夹占空间。<br>最终我还是用github吧！</p>
-
+<h1 id="使用心得"><a href="#使用心得" class="headerlink" title="使用心得"></a>使用心得</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/78087948">https://zhuanlan.zhihu.com/p/78087948</a><br>front-matter就是.md文件最上面的这部分内容</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/85899661">https://zhuanlan.zhihu.com/p/85899661</a><br>直接fork这个项目改一改，在项目settings打开page功能，就有了这个网址：<br><a target="_blank" rel="noopener" href="https://xxx.github.io/%E9%A1%B9%E7%9B%AE%E5%90%8D">https://xxx.github.io/项目名</a></p>
+<p>若使用密码，需要在模板的配置里启用，然后再文章front-matter写上sha256加密后的密文，同时注意搜索配置可以关闭文本搜索只搜索标题。但是首页的文章推荐还会显示一部分文章内容？！</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yueyue200830/article/details/104470646">https://blog.csdn.net/yueyue200830/article/details/104470646</a><br>设置hexo首页只显示部分摘要（不显示全文）<br>第一个方法不起作用，第二个方法可以<br>在需要截断的地方加入：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!--more--&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -811,7 +831,7 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://summer-i-love-nku.github.io/2023/09/03/20230903-di-yi-pian-wen-zhang/">https://summer-i-love-nku.github.io/2023/09/03/20230903-di-yi-pian-wen-zhang/</a>
+                    <a href="https://summer-i-love-nku.github.io/2023/0903/20230903-di-yi-pian-wen-zhang/">https://summer-i-love-nku.github.io/2023/0903/20230903-di-yi-pian-wen-zhang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -849,6 +869,10 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/%E4%BC%BC%E6%B0%B4%E6%B5%81%E5%B9%B4/">
+                                    <span class="chip bg-color">似水流年</span>
+                                </a>
+                            
                                 <a href="/tags/Node/">
                                     <span class="chip bg-color">Node</span>
                                 </a>
@@ -871,10 +895,6 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
                             
                                 <a href="/tags/%E6%95%99%E7%A8%8B/">
                                     <span class="chip bg-color">教程</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BC%BC%E6%B0%B4%E6%B5%81%E5%B9%B4/">
-                                    <span class="chip bg-color">似水流年</span>
                                 </a>
                             
                         </div>
@@ -922,7 +942,7 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/05/20230905-mu-qian-de-zhu-yao-ren-wu/">
+                <a href="/2023/0905/20230905-mu-qian-de-zhu-yao-ren-wu/">
                     <div class="card-image">
                         
                         
@@ -971,7 +991,7 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/03/20230903-di-yi-pian-wen-zhang/">
+                <a href="/2023/0903/20230903-di-yi-pian-wen-zhang/">
                     <div class="card-image">
                         
                         
@@ -984,6 +1004,8 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
                     <div class="summary block-with-text">
                         
                             
+
+开笔篇
                         
                     </div>
                     <div class="publish-info">
@@ -1005,6 +1027,10 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
 
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BC%BC%E6%B0%B4%E6%B5%81%E5%B9%B4/">
+                        <span class="chip bg-color">似水流年</span>
+                    </a>
                     
                     <a href="/tags/Node/">
                         <span class="chip bg-color">Node</span>
@@ -1028,10 +1054,6 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
                     
                     <a href="/tags/%E6%95%99%E7%A8%8B/">
                         <span class="chip bg-color">教程</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BC%BC%E6%B0%B4%E6%B5%81%E5%B9%B4/">
-                        <span class="chip bg-color">似水流年</span>
                     </a>
                     
                 </div>
