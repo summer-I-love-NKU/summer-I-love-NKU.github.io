@@ -117,6 +117,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/html/index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>恋爱记录</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -205,6 +216,17 @@
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/html/index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			恋爱记录
 		</a>
           
         </li>
@@ -478,21 +500,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-06
+                    2024-03-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    15 分
                 </div>
                 
 
@@ -550,6 +572,7 @@ ssh-keygen -t rsa -C &quot;xx@xx&quot;
 <li>最终我的版本：<br>E:\Desktop&gt;node -v<br>v12.22.12<br>E:\Desktop&gt;npm -v<br>6.14.16<br>E:\Desktop&gt;hexo -v<br>hexo-cli: 4.3.1</li>
 </ul>
 </blockquote>
+<p>2024.3 换新电脑啦，安装最新的就行了！</p>
 <h3 id="配置node环境变量"><a href="#配置node环境变量" class="headerlink" title="配置node环境变量"></a>配置node环境变量</h3><pre class="line-numbers language-none"><code class="language-none">配置环境变量：
 注意名字叫NODE_PATH，值是：D:\SoftwareandTools\nodejs\node-v18.17.1-win-x64;
 然后加到系统环境变量的path里
@@ -559,7 +582,19 @@ ssh-keygen -t rsa -C &quot;xx@xx&quot;
 npm config set prefix &quot;D:\SoftwareandTools\nodejs\node-v18.17.1-win-x64&quot;
 npm config set cache &quot;D:\SoftwareandTools\nodejs\node-v18.17.1-win-x64\node_cache&quot;  (需要新建文件夹node_cache)
 
+
+--------------------------------------------------------
+(2024.3)
+npm config set prefix &quot;D:\Libs\nodejs-v20.12.0&quot;
+npm config set cache &quot;D:\Libs\nodejs-v20.12.0\node_cache&quot;
+npm root -g
 最终npm root -g 显示 D:\SoftwareandTools\nodejs\node-v18.17.1-win-x64\node_modules
+
+
+换源：
+npm config set registry https:&#x2F;&#x2F;registry.npmmirror.com
+--------------------------------------------------------
+
 
 检查：
 node -v
@@ -570,18 +605,26 @@ cache&#x3D;D:\SoftwareandTools\nodejs\node-v12.22.12-win-x64\node_cache
 D:\SoftwareandTools\nodejs\node-v12.22.12-win-x64
 +-- cnpm@7.1.1
 +-- hexo-cli@4.3.1
-&#96;-- npm@6.14.16<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#96;-- npm@6.14.16<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 <h3 id="安装-cnpm"><a href="#安装-cnpm" class="headerlink" title="安装 cnpm"></a>安装 cnpm</h3><p>你懂的，比npm方便(注意我是低版本node，要安装旧版本的cnpm！<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/120159632">https://zhuanlan.zhihu.com/p/120159632</a>)</p>
 <pre class="line-numbers language-none"><code class="language-none">不指定版本会默认安装最新的，然后报错：
-npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org
+npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npmmirror.com
 Unsupported engine for cnpm@9.2.0: wanted: &#123;&quot;node&quot;:&quot;&gt;&#x3D; 14.18.0&quot;&#125; (current: &#123;&quot;node&quot;:&quot;12.22.12&quot;,&quot;npm&quot;:&quot;6.14.16&quot;&#125;)
 我选择这个：
 https:&#x2F;&#x2F;www.npmjs.com&#x2F;package&#x2F;cnpm&#x2F;v&#x2F;7.1.1
-npm install cnpm@7.1.1 -g --registry&#x3D;https:&#x2F;&#x2F;registry.npmmirror.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+npm install cnpm@7.1.1 -g --registry&#x3D;https:&#x2F;&#x2F;registry.npmmirror.com
 
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><pre class="line-numbers language-none"><code class="language-none">cnpm install -g hexo-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+如果报错，就管理员打开cmd再输入：
+npm install cnpm -g --registry&#x3D;https:&#x2F;&#x2F;registry.npmmirror.com
+
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><pre class="line-numbers language-none"><code class="language-none">cnpm install -g hexo-cli
+(好吧，win11还得管理员cmd运行！)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 <h2 id="3-Hexo使用"><a href="#3-Hexo使用" class="headerlink" title="3. Hexo使用"></a>3. Hexo使用</h2><pre class="line-numbers language-none"><code class="language-none">hexo -v
@@ -801,11 +844,27 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
 .gitlab-ci.yml  package.json  scaffolds<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>而github是真的方便，写完文章，直接本地hexo g -d就行，只是项目里有node_modules（各种包）和.deploy_git、public（上传到github的html文件）文件夹占空间。<br>最终我还是用github吧！</p>
-<h1 id="使用心得"><a href="#使用心得" class="headerlink" title="使用心得"></a>使用心得</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/78087948">https://zhuanlan.zhihu.com/p/78087948</a><br>front-matter就是.md文件最上面的这部分内容</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/85899661">https://zhuanlan.zhihu.com/p/85899661</a><br>直接fork这个项目改一改，在项目settings打开page功能，就有了这个网址：<br><a target="_blank" rel="noopener" href="https://xxx.github.io/%E9%A1%B9%E7%9B%AE%E5%90%8D">https://xxx.github.io/项目名</a></p>
-<p>若使用密码，需要在模板的配置里启用，然后再文章front-matter写上sha256加密后的密文，同时注意搜索配置可以关闭文本搜索只搜索标题。但是首页的文章推荐还会显示一部分文章内容？！</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yueyue200830/article/details/104470646">https://blog.csdn.net/yueyue200830/article/details/104470646</a><br>设置hexo首页只显示部分摘要（不显示全文）<br>第一个方法不起作用，第二个方法可以<br>在需要截断的地方加入：</p>
+<h1 id="使用心得"><a href="#使用心得" class="headerlink" title="使用心得"></a>使用心得</h1><h2 id="front-matter"><a href="#front-matter" class="headerlink" title="front-matter"></a>front-matter</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/78087948">https://zhuanlan.zhihu.com/p/78087948</a><br>front-matter就是.md文件最上面的这部分内容</p>
+<h2 id="其他项目"><a href="#其他项目" class="headerlink" title="其他项目"></a>其他项目</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/85899661">https://zhuanlan.zhihu.com/p/85899661</a><br>直接fork这个项目改一改，在项目settings打开page功能，就有了这个网址：<br><a target="_blank" rel="noopener" href="https://xxx.github.io/%E9%A1%B9%E7%9B%AE%E5%90%8D">https://xxx.github.io/项目名</a></p>
+<h2 id="密码，不推荐使用"><a href="#密码，不推荐使用" class="headerlink" title="密码，不推荐使用"></a>密码，不推荐使用</h2><p>若使用密码，需要在模板的配置里启用，然后再文章front-matter写上sha256加密后的密文，同时注意搜索配置可以关闭文本搜索只搜索标题。但是首页的文章推荐还会显示一部分文章内容？！</p>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><pre class="line-numbers language-none"><code class="language-none">换行符 &lt;br &#x2F;&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>添加html页面、<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_58068682/article/details/116611715">https://blog.csdn.net/weixin_58068682/article/details/116611715</a></p>
+<p>html加密码<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44708572/article/details/106832660">https://blog.csdn.net/qq_44708572/article/details/106832660</a></p>
+<h2 id="摘要显示"><a href="#摘要显示" class="headerlink" title="摘要显示"></a>摘要显示</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yueyue200830/article/details/104470646">https://blog.csdn.net/yueyue200830/article/details/104470646</a><br>设置hexo首页只显示部分摘要（不显示全文）<br>第一个方法不起作用，第二个方法可以<br>在需要截断的地方加入：</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;!--more--&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><a target="_blank" rel="noopener" href="https://bitbci.github.io/2022/04/29/11-wang-zhan-kai-fa/hexo-bo-ke-matery-zhu-ti-markdown-wen-jian-zhong-cha-ru-b-zhan-shi-pin/">https://bitbci.github.io/2022/04/29/11-wang-zhan-kai-fa/hexo-bo-ke-matery-zhu-ti-markdown-wen-jian-zhong-cha-ru-b-zhan-shi-pin/</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41496127/article/details/108931183">https://blog.csdn.net/qq_41496127/article/details/108931183</a></p>
+<p>首页如何插入呢</p>
+<iframe class="bilibili" src="//player.bilibili.com/player.html?aid=212464091&bvid=BV1xa411t7JK&cid=553318499&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=90978812&cid=155358422&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div>
+
                 
             </div>
             <hr/>
@@ -942,7 +1001,7 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/2023/20230905-mu-qian-de-zhu-yao-ren-wu/">
+                <a href="/posts/2023/20230905-mu-qian-de-zhu-yao-ren-wu-copy/">
                     <div class="card-image">
                         
                         
@@ -1193,7 +1252,7 @@ This job is in pending state and is waiting to be picked by a runner<span aria-h
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2024</span>
             
             <span id="year">2023</span>
             <a href="/about" target="_blank">公能求是</a>
